@@ -1,0 +1,19 @@
+service: ${file(./package.json):name}
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-southeast-1
+  role: arn:aws:iam::${env:AWS_ACCOUNT_ID}:role/ApplicationRoleFor_tmd-weather-warning-line-notification
+  versionFunctions: false
+
+functions:
+  weather-warning-scheduler:
+    handler: src/lambda/weather-warning.scheduler
+    timeout: 30
+    events:
+      - schedule: rate(1 hour)

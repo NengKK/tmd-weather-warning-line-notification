@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "tslint:recommended"
+  ],
+  "rules": {
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
+    "trailing-comma": false,
+    "ordered-imports": true,
+    "member-ordering": true,
+    "semicolon": [
+      true,
+      "always",
+      "ignore-interfaces"
+    ],
+    "max-line-length": true
+  }
+}
